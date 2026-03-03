@@ -1,0 +1,14 @@
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\bin\Debug\net10.0\dotnetFundamentals.exe
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\bin\Debug\net10.0\dotnetFundamentals.deps.json
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\bin\Debug\net10.0\dotnetFundamentals.runtimeconfig.json
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\bin\Debug\net10.0\dotnetFundamentals.dll
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\bin\Debug\net10.0\dotnetFundamentals.pdb
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\dotnetFundamentals.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\dotnetFundamentals.AssemblyInfoInputs.cache
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\dotnetFundamentals.AssemblyInfo.cs
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\dotnetFundamentals.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\dotnetFundamentals.dll
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\refint\dotnetFundamentals.dll
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\dotnetFundamentals.pdb
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\dotnetFundamentals.genruntimeconfig.cache
+C:\Users\Dell\Documents\dotnet-learning-progress\dotnetfundamentals\obj\Debug\net10.0\ref\dotnetFundamentals.dll
