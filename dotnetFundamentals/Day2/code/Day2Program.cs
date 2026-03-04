@@ -1,3 +1,9 @@
+namespace Day2Examples
+{public static class Day2Program
+{
+public static void Run()
+{
+
 Console.WriteLine("VARIABLES:");
 // Explicit variables
 Console.Write("Enter a number: ");
@@ -62,3 +68,6 @@ bool condition3 = !(a < b);
 Console.WriteLine($"(a > b) AND (b > 0): {condition1}");
 Console.WriteLine($"(a > b) OR (b > 10): {condition2}");
 Console.WriteLine($"NOT (a < b): {condition3}");
+}
+}
+}
