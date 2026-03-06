@@ -3,6 +3,7 @@
 using Day3Examples;
 using Day2Examples;
 using Day4Example;
+using Day5Examples;
 class Program
 {
     static void Main()
@@ -11,6 +12,7 @@ class Program
 
         //Day2Program.Run();
         //Day3Program.Run();
-        CalculatorApp.Run();
+        //CalculatorApp.Run();
+        Day5Programs.Run();
     }
 }
