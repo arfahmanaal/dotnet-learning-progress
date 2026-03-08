@@ -26,13 +26,17 @@
 ### Output Screenshots
 
 **Add Student**
+
 ![Add Student](./screenshots/day7.1.png)
 
 **View Student(s)**
+
 ![View Students](./screenshots/day7.2.png)
 
 **Update Student**
+
 ![Update Student](./screenshots/day7.3.png)
 
 **Delete Student**
+
 ![Delete Student](./screenshots/day7.4.png)
