@@ -5,6 +5,7 @@ using Day2Examples;
 using Day4Example;
 using Day5Examples;
 using Day6Example;
+using week1Assessment;
 class Program
 {
     static void Main()
@@ -15,7 +16,10 @@ class Program
         //Day3Program.Run();
         //CalculatorApp.Run();
         //Day5Programs.Run();
-        var emp = new EmployeeRunner();
-        emp.Run();
+        ////Day 6 Program
+        //var emp = new EmployeeRunner();
+        //emp.Run();
+        StudentManagement stu = new StudentManagement();
+        stu.Run();
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetFundamentals\\dotnetFundamentals.csproj": {}
+    "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetfundamentals\\dotnetFundamentals.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetFundamentals\\dotnetFundamentals.csproj": {
+    "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetfundamentals\\dotnetFundamentals.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetFundamentals\\dotnetFundamentals.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetfundamentals\\dotnetFundamentals.csproj",
         "projectName": "dotnetFundamentals",
-        "projectPath": "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetFundamentals\\dotnetFundamentals.csproj",
+        "projectPath": "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetfundamentals\\dotnetFundamentals.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetFundamentals\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Documents\\dotnet-learning-progress\\dotnetfundamentals\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config"
