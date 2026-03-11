@@ -1,0 +1,12 @@
+@model StudentManagementApp.Models.Student
+
+<h2>Edit Student</h2>
+
+<form method="post" action="/Students/Edit/@Model.Id">
+    <p>Name: <input name="Name" value="@Model.Name" /></p>
+    <p>Age: <input name="Age" type="number" value="@Model.Age" /></p>
+    <p>Grade: <input name="Grade" value="@Model.Grade" /></p>
+    <button type="submit">Update</button>
+</form>
+
+<a href="/Students">Back to list</a>

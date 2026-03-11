@@ -1,0 +1,11 @@
+@model StudentManagementApp.Models.Student
+
+<h2>Student Details</h2>
+
+<p>Id: @Model.Id</p>
+<p>Name: @Model.Name</p>
+<p>Age: @Model.Age</p>
+<p>Grade: @Model.Grade</p>
+
+<a href="/Students/Edit/@Model.Id">Edit</a> |
+<a href="/Students">Back to list</a>

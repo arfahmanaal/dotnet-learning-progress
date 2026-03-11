@@ -1,0 +1,32 @@
+@model List<StudentManagementApp.Models.Student>
+
+<h2>Students</h2>
+
+@if (TempData["Message"] != null)
+{
+    <p style="color:black">@TempData["Message"]</p>
+}
+
+<a href="/Students/Create">Add New Student</a>
+
+<table border="1">
+    <tr>
+        <th>Id</th><th>Name</th><th>Age</th><th>Grade</th><th>Actions</th>
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.Name</td>
+            <td>@s.Age</td>
+            <td>@s.Grade</td>
+            <td>
+                <a href="/Students/Details/@s.Id">Details</a> |
+                <a href="/Students/Edit/@s.Id">Edit</a> |
+                <form method="post" action="/Students/Delete/@s.Id" style="display:inline">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
