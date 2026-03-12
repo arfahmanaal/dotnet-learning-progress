@@ -1,41 +1,34 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentManagementApp.Models;
+using StudentManagementApp.Services;
 
 namespace StudentManagementApp.Controllers
 {
     public class StudentsController : Controller
     {
-        private static List<Student> _students = new List<Student>
+        private readonly IStudentService _studentService;
+
+        public StudentsController(IStudentService studentService)
         {
-            new Student { Id = 1, Name = "John", Age = 20, Grade = "A" },
-            new Student { Id = 2, Name = "Steve", Age = 21, Grade = "B" },
-            new Student { Id = 3, Name = "Bill", Age = 19, Grade = "A" },
-        };
-        private static int _nextId = 4;
+            _studentService = studentService;
+        }
 
         public IActionResult Index()
-        {
-            return View(_students);
-        }
+            => View(_studentService.GetAll());
 
         public IActionResult Details(int id)
         {
-            var student = _students.FirstOrDefault(s => s.Id == id);
+            var student = _studentService.GetById(id);
             if (student == null) return NotFound();
             return View(student);
         }
 
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
+        [HttpGet] public IActionResult Create() => View();
 
         [HttpPost]
         public IActionResult Create(Student student)
         {
-            student.Id = _nextId++;
-            _students.Add(student);
+            _studentService.Add(student);
             TempData["Message"] = "Student added!";
             return RedirectToAction("Index");
         }
@@ -43,7 +36,7 @@ namespace StudentManagementApp.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var student = _students.FirstOrDefault(s => s.Id == id);
+            var student = _studentService.GetById(id);
             if (student == null) return NotFound();
             return View(student);
         }
@@ -51,11 +44,7 @@ namespace StudentManagementApp.Controllers
         [HttpPost]
         public IActionResult Edit(int id, Student updated)
         {
-            var student = _students.FirstOrDefault(s => s.Id == id);
-            if (student == null) return NotFound();
-            student.Name  = updated.Name;
-            student.Age   = updated.Age;
-            student.Grade = updated.Grade;
+            _studentService.Update(id, updated);
             TempData["Message"] = "Student updated!";
             return RedirectToAction("Index");
         }
@@ -63,9 +52,7 @@ namespace StudentManagementApp.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            var student = _students.FirstOrDefault(s => s.Id == id);
-            if (student == null) return NotFound();
-            _students.Remove(student);
+            _studentService.Delete(id);
             TempData["Message"] = "Student deleted!";
             return RedirectToAction("Index");
         }
