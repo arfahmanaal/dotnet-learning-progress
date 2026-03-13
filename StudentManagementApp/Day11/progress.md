@@ -5,17 +5,17 @@
   - Need of Dependency Injection
   - 3 Types of DI (Constructor, Property, Method)
   - Client / Service / Injector class roles
-  - Constructor Injection, Action Method Injection, 
+  - Constructor Injection, Action Method Injection
   - IoC Container
 
 - Service Registration  
   - Singleton, Transient, Scoped 
-  - Getting services manually via HttpContext.RequestServices (anti-pattern)
+  - Getting services manually via HttpContext.RequestServices
 
 ## Tasks Completed
 - **Refactored StudentsController to use DI**
   - Constructor now receives IStudentService via injection
-  - All actions call service methods — zero data logic in controller
+  - All actions call service methods - No data logic in controller
 
 - **Created IStudentService interface**
   - Defined GetAll, GetById, Add, Update, Delete methods in `Services/IStudentService.cs`
