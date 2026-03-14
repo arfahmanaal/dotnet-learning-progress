@@ -1,12 +1,28 @@
 @model StudentManagementApp.Models.Student
+@{
+    ViewData["Title"] = "Edit Student";
+}
 
 <h2>Edit Student</h2>
 
-<form method="post" action="/Students/Edit/@Model.Id">
-    <p>Name: <input name="Name" value="@Model.Name" /></p>
-    <p>Age: <input name="Age" type="number" value="@Model.Age" /></p>
-    <p>Grade: <input name="Grade" value="@Model.Grade" /></p>
-    <button type="submit">Update</button>
-</form>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<a href="/Students">Back to list</a>
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Grade"></label>
+        <input asp-for="Grade" />
+        <span asp-validation-for="Grade" class="text-danger"></span>
+    </div>
+    <button type="submit">Save</button>
+    <a asp-action="Index">Cancel</a>
+</form>

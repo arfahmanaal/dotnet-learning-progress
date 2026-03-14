@@ -47,9 +47,15 @@ namespace StudentManagementApp.Controllers
         [HttpPost]
         public IActionResult Create(Student student)
         {
-            _studentService.Add(student);
-            _logger.LogInformation("New student created: {StudentName}", student.Name);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _studentService.Add(student);
+                _logger.LogInformation("New student created: {StudentName}", student.Name);
+                TempData["Message"] = "Student added!";
+                return RedirectToAction("Index");
+            }
+            _logger.LogWarning("Create failed — invalid model state for {StudentName}", student.Name);
+            return View(student);
         }
 
         public IActionResult Edit(int id)
@@ -67,9 +73,15 @@ namespace StudentManagementApp.Controllers
         [HttpPost]
         public IActionResult Edit(int id, Student student)
         {
-            _studentService.Update(id, student);
-            _logger.LogInformation("Student Id {StudentId} updated", id);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _studentService.Update(id, student);
+                _logger.LogInformation("Student Id {StudentId} updated", id);
+                TempData["Message"] = "Student updated!";
+                return RedirectToAction("Index");
+            }
+            _logger.LogWarning("Edit failed — invalid model state for Id {StudentId}", id);
+            return View(student);
         }
 
         [HttpPost]
@@ -77,6 +89,7 @@ namespace StudentManagementApp.Controllers
         {
             _studentService.Delete(id);
             _logger.LogWarning("Student Id {StudentId} deleted", id);
+            TempData["Message"] = "Student deleted!";
             return RedirectToAction("Index");
         }
     }
