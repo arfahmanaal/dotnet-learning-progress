@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using StudentAPI.Data;
 using StudentAPI.Models;
+using StudentAPI.Repositories;
 
 namespace StudentAPI.Controllers
 {
@@ -9,23 +8,23 @@ namespace StudentAPI.Controllers
     [Route("api/[controller]")]
     public class StudentsController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IStudentRepository _repository;
 
-        public StudentsController(AppDbContext context)
+        public StudentsController(IStudentRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Student>>> GetAll()
         {
-            return Ok(await _context.Students.ToListAsync());
+            return Ok(await _repository.GetAllAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Student>> GetById(int id)
         {
-            var student = await _context.Students.FindAsync(id);
+            var student = await _repository.GetByIdAsync(id);
             if (student == null) return NotFound();
             return Ok(student);
         }
@@ -33,31 +32,25 @@ namespace StudentAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Student>> Create(Student student)
         {
-            _context.Students.Add(student);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetById), new { id = student.Id }, student);
+            var created = await _repository.AddAsync(student);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Student student)
         {
             if (id != student.Id) return BadRequest();
-            var existing = await _context.Students.FindAsync(id);
+            var existing = await _repository.GetByIdAsync(id);
             if (existing == null) return NotFound();
-            existing.Name  = student.Name;
-            existing.Age   = student.Age;
-            existing.Grade = student.Grade;
-            await _context.SaveChangesAsync();
+            await _repository.UpdateAsync(student);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var student = await _context.Students.FindAsync(id);
-            if (student == null) return NotFound();
-            _context.Students.Remove(student);
-            await _context.SaveChangesAsync();
+            var deleted = await _repository.DeleteAsync(id);
+            if (!deleted) return NotFound();
             return NoContent();
         }
     }
