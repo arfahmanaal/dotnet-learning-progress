@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StudentAPI.Data;
+using StudentAPI.Exceptions;
 using StudentAPI.Models;
 
 namespace StudentAPI.Repositories
@@ -14,13 +15,14 @@ namespace StudentAPI.Repositories
         }
 
         public async Task<List<Student>> GetAllAsync()
-        {
-            return await _context.Students.ToListAsync();
-        }
+            => await _context.Students.ToListAsync();
 
         public async Task<Student?> GetByIdAsync(int id)
         {
-            return await _context.Students.FindAsync(id);
+            var student = await _context.Students.FindAsync(id);
+            if (student == null)
+                throw new NotFoundException("Student", id);
+            return student;
         }
 
         public async Task<Student> AddAsync(Student student)
@@ -33,7 +35,8 @@ namespace StudentAPI.Repositories
         public async Task UpdateAsync(Student student)
         {
             var existing = await _context.Students.FindAsync(student.Id);
-            if (existing == null) return;
+            if (existing == null)
+                throw new NotFoundException("Student", student.Id);
             existing.Name  = student.Name;
             existing.Age   = student.Age;
             existing.Grade = student.Grade;
@@ -43,7 +46,8 @@ namespace StudentAPI.Repositories
         public async Task<bool> DeleteAsync(int id)
         {
             var student = await _context.Students.FindAsync(id);
-            if (student == null) return false;
+            if (student == null)
+                throw new NotFoundException("Student", id);
             _context.Students.Remove(student);
             await _context.SaveChangesAsync();
             return true;

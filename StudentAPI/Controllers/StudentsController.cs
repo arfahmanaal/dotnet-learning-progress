@@ -25,7 +25,6 @@ namespace StudentAPI.Controllers
         public async Task<ActionResult<Student>> GetById(int id)
         {
             var student = await _repository.GetByIdAsync(id);
-            if (student == null) return NotFound();
             return Ok(student);
         }
 
@@ -40,8 +39,6 @@ namespace StudentAPI.Controllers
         public async Task<IActionResult> Update(int id, Student student)
         {
             if (id != student.Id) return BadRequest();
-            var existing = await _repository.GetByIdAsync(id);
-            if (existing == null) return NotFound();
             await _repository.UpdateAsync(student);
             return NoContent();
         }
@@ -49,8 +46,7 @@ namespace StudentAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var deleted = await _repository.DeleteAsync(id);
-            if (!deleted) return NotFound();
+            await _repository.DeleteAsync(id);
             return NoContent();
         }
     }
