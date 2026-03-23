@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentAPI.Models;
 using StudentAPI.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StudentAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize] 
     public class StudentsController : ControllerBase
     {
         private readonly IStudentRepository _repository;
