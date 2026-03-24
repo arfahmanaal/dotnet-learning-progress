@@ -25,6 +25,11 @@ namespace StudentAPI.Repositories
             return student;
         }
 
+        public async Task<List<Student>> GetByGradeAsync(string grade)
+            => await _context.Students
+               .Where(s => s.Grade == grade)
+               .OrderBy(s => s.Name)
+               .ToListAsync();
         public async Task<Student> AddAsync(Student student)
         {
             _context.Students.Add(student);

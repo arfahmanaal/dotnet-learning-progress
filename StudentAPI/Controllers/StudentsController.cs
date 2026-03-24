@@ -30,6 +30,12 @@ namespace StudentAPI.Controllers
             return Ok(student);
         }
 
+        [HttpGet("grade/{grade}")]
+        public async Task<ActionResult<List<Student>>> GetByGrade(string grade)
+        {
+            return Ok(await _repository.GetByGradeAsync(grade));
+        }
+        
         [HttpPost]
         public async Task<ActionResult<Student>> Create(Student student)
         {
