@@ -18,9 +18,9 @@ namespace StudentAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Student>>> GetAll()
+        public async Task<ActionResult<List<Student>>> GetAll(CancellationToken ct)
         {
-            return Ok(await _repository.GetAllAsync());
+            return Ok(await _repository.GetAllAsync(ct));
         }
 
         [HttpGet("{id}")]

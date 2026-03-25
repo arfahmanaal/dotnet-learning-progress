@@ -14,8 +14,8 @@ namespace StudentAPI.Repositories
             _context = context;
         }
 
-        public async Task<List<Student>> GetAllAsync()
-            => await _context.Students.ToListAsync();
+        public async Task<List<Student>> GetAllAsync(CancellationToken ct = default)
+            => await _context.Students.ToListAsync(ct);
 
         public async Task<Student?> GetByIdAsync(int id)
         {

@@ -4,7 +4,7 @@ namespace StudentAPI.Repositories
 {
     public interface IStudentRepository
     {
-        Task<List<Student>> GetAllAsync();
+        Task<List<Student>> GetAllAsync(CancellationToken ct = default);
         Task<List<Student>> GetByGradeAsync(string grade);
         Task<Student?> GetByIdAsync(int id);
         Task<Student> AddAsync(Student student);
