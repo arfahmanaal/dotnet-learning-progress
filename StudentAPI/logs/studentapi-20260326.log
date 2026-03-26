@@ -4,3 +4,39 @@
 2026-03-26 17:57:37.702 +05:30 [INF] Hosting environment: Development
 2026-03-26 17:57:37.704 +05:30 [INF] Content root path: C:\Users\Dell\Documents\dotnet-learning-progress\StudentAPI
 2026-03-26 17:57:45.563 +05:30 [INF] Application is shutting down...
+2026-03-26 17:59:47.041 +05:30 [INF] User profile is available. Using 'C:\Users\Dell\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-26 17:59:47.177 +05:30 [INF] Now listening on: http://localhost:5248
+2026-03-26 17:59:47.181 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-26 17:59:47.183 +05:30 [INF] Hosting environment: Development
+2026-03-26 17:59:47.185 +05:30 [INF] Content root path: C:\Users\Dell\Documents\dotnet-learning-progress\StudentAPI
+2026-03-26 18:02:52.302 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5248/api/auth/login - application/json 57
+2026-03-26 18:02:52.675 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-03-26 18:02:52.812 +05:30 [INF] Executing endpoint 'StudentAPI.Controllers.AuthController.Login (StudentAPI)'
+2026-03-26 18:02:52.902 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(StudentAPI.Models.LoginRequest) on controller StudentAPI.Controllers.AuthController (StudentAPI).
+2026-03-26 18:02:53.064 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-26 18:02:53.091 +05:30 [INF] Executed action StudentAPI.Controllers.AuthController.Login (StudentAPI) in 176.3895ms
+2026-03-26 18:02:53.099 +05:30 [INF] Executed endpoint 'StudentAPI.Controllers.AuthController.Login (StudentAPI)'
+2026-03-26 18:02:53.105 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5248/api/auth/login - 200 null application/json; charset=utf-8 817.8996ms
+2026-03-26 18:03:06.828 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5248/api/students/grade/D - null null
+2026-03-26 18:03:06.962 +05:30 [INF] Executing endpoint 'StudentAPI.Controllers.StudentsController.GetByGrade (StudentAPI)'
+2026-03-26 18:03:06.986 +05:30 [INF] Route matched with {action = "GetByGrade", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[StudentAPI.Models.Student]]] GetByGrade(System.String) on controller StudentAPI.Controllers.StudentsController (StudentAPI).
+2026-03-26 18:03:09.726 +05:30 [INF] Executed DbCommand (98ms) [Parameters=[@grade='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Age], [s].[Grade], [s].[Name]
+FROM [Students] AS [s]
+WHERE [s].[Grade] = @grade
+ORDER BY [s].[Name]
+2026-03-26 18:03:09.769 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StudentAPI.Models.Student, StudentAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-26 18:03:09.789 +05:30 [INF] Executed action StudentAPI.Controllers.StudentsController.GetByGrade (StudentAPI) in 2800.1948ms
+2026-03-26 18:03:09.795 +05:30 [INF] Executed endpoint 'StudentAPI.Controllers.StudentsController.GetByGrade (StudentAPI)'
+2026-03-26 18:03:09.819 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5248/api/students/grade/D - 200 null application/json; charset=utf-8 2991.7791ms
+2026-03-26 18:03:18.098 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5248/api/students/ - null null
+2026-03-26 18:03:18.115 +05:30 [INF] Executing endpoint 'StudentAPI.Controllers.StudentsController.GetAll (StudentAPI)'
+2026-03-26 18:03:18.129 +05:30 [INF] Route matched with {action = "GetAll", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[StudentAPI.Models.Student]]] GetAll(System.Threading.CancellationToken) on controller StudentAPI.Controllers.StudentsController (StudentAPI).
+2026-03-26 18:03:18.181 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Age], [s].[Grade], [s].[Name]
+FROM [Students] AS [s]
+2026-03-26 18:03:18.372 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StudentAPI.Models.Student, StudentAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-26 18:03:18.377 +05:30 [INF] Executed action StudentAPI.Controllers.StudentsController.GetAll (StudentAPI) in 244.6794ms
+2026-03-26 18:03:18.382 +05:30 [INF] Executed endpoint 'StudentAPI.Controllers.StudentsController.GetAll (StudentAPI)'
+2026-03-26 18:03:18.384 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5248/api/students/ - 200 null application/json; charset=utf-8 285.7945ms
+2026-03-26 18:09:53.022 +05:30 [INF] Application is shutting down...

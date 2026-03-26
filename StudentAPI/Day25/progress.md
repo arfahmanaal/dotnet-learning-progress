@@ -21,7 +21,9 @@
   - Replaced default logging with Serilog using UseSerilog()
   - Enabled console logging for real-time monitoring and file logging with daily rolling logs (logs studentapi-.log)
 
+  ![Day 25 Serilog request log output](./screenshots/day25.1.png)
+
 - **Verified structured request logging output**
   - logs/ folder created with rolling log file
 
-  ![Day 25 Serilog request log output](./screenshots/day25.1.png)
+  ![Day 25 Serilog request log output](./screenshots/day25.2.png)
