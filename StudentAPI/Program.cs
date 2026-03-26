@@ -4,12 +4,17 @@ using Microsoft.EntityFrameworkCore;
 using StudentAPI.Data;
 using StudentAPI.Repositories;
 using StudentAPI.Exceptions;
+using Serilog;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Host.UseSerilog((ctx, lc) => lc
+    .WriteTo.Console()
+    .WriteTo.File("logs/studentapi-.log", rollingInterval: RollingInterval.Day)
+    .MinimumLevel.Information());
 
+// Add services to the container.
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
 builder.Services.AddControllers();

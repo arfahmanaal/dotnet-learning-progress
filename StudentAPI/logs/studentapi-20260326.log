@@ -1,0 +1,6 @@
+2026-03-26 17:57:37.339 +05:30 [INF] User profile is available. Using 'C:\Users\Dell\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-26 17:57:37.696 +05:30 [INF] Now listening on: http://localhost:5248
+2026-03-26 17:57:37.701 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-26 17:57:37.702 +05:30 [INF] Hosting environment: Development
+2026-03-26 17:57:37.704 +05:30 [INF] Content root path: C:\Users\Dell\Documents\dotnet-learning-progress\StudentAPI
+2026-03-26 17:57:45.563 +05:30 [INF] Application is shutting down...
